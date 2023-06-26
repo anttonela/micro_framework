@@ -1,0 +1,30 @@
+{
+    "name": "erandir/plug-route",
+    "description": "Route library for php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antonio Erandir Feitosa Soares Junior",
+            "email": "aefs12junior@gmail.com"
+        }
+    ],
+    "version" : "v4.6",
+    "require": {
+        "php": ">= 7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "PlugRoute\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PlugRoute\\Test\\": "tests/",
+            "PlugRoute\\Example\\": "examples/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.21"
+    }
+}
