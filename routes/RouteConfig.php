@@ -15,12 +15,11 @@ class RouteConfig
 
         if (array_key_exists($url, $routes)) {
             $dividindoRota = explode('@', $routes[$url]);
-            
+
             $controller = $dividindoRota[0];
             $metodo = $dividindoRota[1];
 
             $arquivoController = '../app/Controllers/' . $controller . '.php';
-
             require_once $arquivoController;
 
             $controllerObj = new $controller();

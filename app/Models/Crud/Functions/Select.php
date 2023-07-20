@@ -78,8 +78,7 @@ class Select extends Banco
         empty($this->column) && !empty($this->where) ? $sql = $sql . $this->selectTable() : null;
         !empty($this->column) ? $sql = $sql . $this->selectColumn() : null;
         !empty($this->offset) ? $sql = $sql . " offset " . $this->offset : null;
-        !empty($this->between) && !empty($this->and) ? $sql = $sql . " between " . $this->between .
-            " and " . $this->and : null;
+        !empty($this->between) && !empty($this->and) ? $sql = $sql . " between " . $this->between . " and " . $this->and : null;
         !empty($this->isNull) ? $sql = $sql . " is null " : null;
         !empty($this->notNull) ? $sql = $sql . " is not null " : null;
         !empty($this->fullJoin) ? $sql = $sql . " full join " . $this->fullJoin : null;

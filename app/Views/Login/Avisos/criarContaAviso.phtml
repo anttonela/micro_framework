@@ -5,6 +5,7 @@ namespace app\Views\Login\Avisos;
 use app\Views\Login\Condicoes\CriarConta;
 
 ?>
+
 <!doctype html>
         <html lang="en">
 
@@ -29,10 +30,12 @@ use app\Views\Login\Condicoes\CriarConta;
                                     <div class="text-center mb-5">
                                         <h3><strong>Aviso</strong></h3>
                                     </div>
+
                                     <?php 
                                         $mensagem = new CriarConta();
                                         print $mensagem->imprimindoAviso();
                                     ?>
+                                    
                                     <br><br><br>
                                     <form method="post">
                                         <input type="submit" name="botao_home" value="Voltar a tela inicial" class="btn btn-block btn-primary">
