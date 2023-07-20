@@ -54,7 +54,7 @@ class RouteTest extends TestCase
 
     public function testNamespace()
     {
-        $this->namespaceContainer->addData('\App');
+        $this->namespaceContainer->addData('\app');
         $route = new Route(
             $this->middlewareContainer,
             $this->namespaceContainer,
@@ -66,7 +66,7 @@ class RouteTest extends TestCase
         $action = $route->getAction();
 
         self::assertInstanceOf(ControllerAction::class, $action);
-        self::assertEquals('\App\Controller', $action->getClass());
+        self::assertEquals('\app\Controller', $action->getClass());
         self::assertEquals('method', $action->getMethod());
     }
 
@@ -101,7 +101,7 @@ class RouteTest extends TestCase
     {
         $this->middlewareContainer->addData(\PDO::class);
         $this->middlewareContainer->addData(\ArrayObject::class);
-        $this->namespaceContainer->addData('\App');
+        $this->namespaceContainer->addData('\app');
         $this->namespaceContainer->addData('\Controller');
         $this->prefixContainer->addData('/news');
         $this->prefixContainer->addData('/sports');
@@ -120,7 +120,7 @@ class RouteTest extends TestCase
         self::assertEquals('/news/sports/f1', $route->getRoute());
         self::assertEquals([\PDO::class, \ArrayObject::class], $route->getMiddlewares());
         self::assertEquals('news.sports.f1', $route->getName());
-        self::assertEquals('\App\Controller\MyController', $action->getClass());
+        self::assertEquals('\app\Controller\MyController', $action->getClass());
         self::assertEquals('run', $action->getMethod());
     }
 

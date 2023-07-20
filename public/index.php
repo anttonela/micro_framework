@@ -1,22 +1,8 @@
 <?php
 
-require_once "/../vendor/autoload.php";
-require "../routes/router.php";
+require '../vendor/autoload.php';
 
-try {
-  $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
-  $request = $_SERVER["REQUEST_METHOD"];
+use routes\RouteConfig;
 
-  if (!isset($router[$request])) {
-    throw new Exception("A rota não existe");
-  }
-
-  if (!array_key_exists($uri, $router[$request])) {
-    throw new Exception("A rota não existe");
-  }
-
-  $controller = $router[$request][$uri];
-  $controller();
-} catch (Exception $erro) {
-  $erro->getMessage();
-}
+$routes = new RouteConfig;
+$routes->acessandoArquivos();

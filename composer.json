@@ -1,25 +1,20 @@
 {
     "name": "antonela/framework",
-    "description": "Micro Framework MVC",
-    "license": "MIT",
-    "type": "project",
     "autoload": {
         "psr-4": {
             "app\\": "app/",
-            "library\\": "library/"
+            "routes\\": "routes/"
         }
     },
     "authors": [
         {
-            "name": "antonela",
+            "name": "Antonela",
             "email": "antonelaipe@gmail.com"
         }
     ],
     "require": {
-        "php": ">=5.4",
-        "league/plates": "^3.5",
-        "windwalker/renderer": "^4.0",
-        "easy-route/easy-route": "v2.0",
-        "erandir/plug-route": "^4.6"
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/dom-crawler": "^4.2",
+        "symfony/css-selector": "^4.2"
     }
 }

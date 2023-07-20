@@ -10,7 +10,7 @@
 * Imported all classes from PlugHttp
 * Added new documentation
 * Saved old documentation in a new folder
-* Applied tests in all the library
+* applied tests in all the library
 * Removed routes from xml file
 * Removed routes from json file
 

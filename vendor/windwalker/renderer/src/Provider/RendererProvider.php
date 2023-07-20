@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Windwalker\Renderer\Provider;
 
-use Windwalker\Core\Application\AppContext;
+use Windwalker\Core\application\appContext;
 use Windwalker\Core\DI\RequestBootableProviderInterface;
 use Windwalker\Core\Events\Web\AfterRoutingEvent;
 use Windwalker\Core\Html\HtmlFrame;
@@ -35,8 +35,8 @@ class RendererProvider implements ServiceProviderInterface, RequestBootableProvi
      */
     public function bootBeforeRequest(Container $container): void
     {
-        if ($container->has(AppContext::class)) {
-            $app = $container->get(AppContext::class);
+        if ($container->has(appContext::class)) {
+            $app = $container->get(appContext::class);
 
             $app->on(
                 AfterRoutingEvent::class,

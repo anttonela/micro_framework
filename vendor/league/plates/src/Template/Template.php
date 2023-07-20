@@ -15,7 +15,7 @@ class Template
 {
     const SECTION_MODE_REWRITE = 1;
     const SECTION_MODE_PREPEND = 2;
-    const SECTION_MODE_APPEND = 3;
+    const SECTION_MODE_appEND = 3;
 
     /**
      * Set section content mode: rewrite/append/prepend
@@ -222,14 +222,14 @@ class Template
     }
 
     /**
-     * Start a new section block in APPEND mode.
+     * Start a new section block in appEND mode.
      * @param  string $name
      * @return null
      */
     public function push($name)
     {
         $this->appendSection = true; /* for backward compatibility */
-        $this->sectionMode = self::SECTION_MODE_APPEND;
+        $this->sectionMode = self::SECTION_MODE_appEND;
         $this->start($name);
     }
 
@@ -267,7 +267,7 @@ class Template
                 $this->sections[$this->sectionName] = ob_get_clean();
                 break;
 
-            case self::SECTION_MODE_APPEND:
+            case self::SECTION_MODE_appEND:
                 $this->sections[$this->sectionName] .= ob_get_clean();
                 break;
 
@@ -328,7 +328,7 @@ class Template
     }
 
     /**
-     * Apply multiple functions to variable.
+     * apply multiple functions to variable.
      * @param  mixed  $var
      * @param  string $functions
      * @return mixed

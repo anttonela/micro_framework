@@ -26,7 +26,7 @@ class XML implements Handler, Advancer
         return $server->contentTypeIs('text/xml');
     }
 
-    private function isApplicationXml(Server $server): bool
+    private function isapplicationXml(Server $server): bool
     {
         return $server->contentTypeIs('application/xml');
     }
@@ -34,9 +34,9 @@ class XML implements Handler, Advancer
     public function handle($server): array
     {
         $isTextXML = $this->isTextXml($server);
-        $isApplicationXML = $this->isApplicationXml($server);
+        $isapplicationXML = $this->isapplicationXml($server);
 
-        if ($isTextXML || $isApplicationXML) {
+        if ($isTextXML || $isapplicationXML) {
             return $this->getBody($server->getContent());
         }
 

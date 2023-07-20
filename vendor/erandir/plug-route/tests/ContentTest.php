@@ -37,7 +37,7 @@ class ContentTest extends TestCase
         self::assertEquals(['Text of example'], $content->all());
     }
 
-    public function testApplicationXml()
+    public function testapplicationXml()
     {
         $instance = new ServerClassXml();
         $instance->flag(1);
